@@ -1,4 +1,13 @@
+#include <iostream>
+#include <fstream>      // 파일
+#include <string>       // string
+#include <unistd.h>     // sleep 함수
+#include <sstream>      // stringstream
+#include <vector>       // vector 함수
+using namespace std;
+#include "AsianUser.h"
 
+// 잘못된 입력
 void BockTicketPayment::InvalidInput2()
 {
     cout<<"잘못 입력하셨습니다."<<endl;
@@ -7,8 +16,6 @@ void BockTicketPayment::InvalidInput2()
     cout<<"재입력하시려면 엔터를 누르세요."<<endl;
     cin.get();
 }
-
-
 // 경기 일정 선택
 void BockTicketPayment::ChoiceSchedule()
 {
@@ -31,7 +38,6 @@ void BockTicketPayment::ChoiceSchedule()
 
     ChoiceArea();
 }
-
 // 경기 구역 선택
 void BockTicketPayment::ChoiceArea()
 {
@@ -60,6 +66,7 @@ void BockTicketPayment::ChoiceArea()
     cout<<"│            3. GOLD(₩80,000)          4. SILVER(₩50,000)              │"<<endl;
     cout<<"│                                                                      │"<<endl;
     cout<<"└──────────────────────────────────────────────────────────────────────┘"<<endl;
+    cin>>userChoice2;
     
     while (userChoice2 != 1 && userChoice2 != 2 && userChoice2 != 3 && userChoice2 != 4)
     {
@@ -72,7 +79,6 @@ void BockTicketPayment::ChoiceArea()
 
     ChoiceSeat(ticketMoney);
 }
-
 // 경기 좌석 맵 출력
 void BockTicketPayment::SeatMap(char (*arr)[25])
 {
@@ -106,7 +112,6 @@ void BockTicketPayment::SeatMap(char (*arr)[25])
         cout<<endl;
     }
 }
-
 // 경기 좌석 선택
 void BockTicketPayment::ChoiceSeat(int area)
 {
@@ -156,7 +161,6 @@ void BockTicketPayment::ChoiceSeat(int area)
         }
     }
 }
-
 // 행 선택
 void BockTicketPayment::ChoiceRow(int* xpos)
 {
@@ -197,7 +201,6 @@ void BockTicketPayment::ChoiceRow(int* xpos)
     else if(row == 'D') *xpos = 10;
     else if(row == 'E') *xpos = 12;
 }
-
 // 열 선택
 void BockTicketPayment::ChoiceColumn(int* ypos){
     system("clear");

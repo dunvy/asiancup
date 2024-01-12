@@ -1,3 +1,12 @@
+#include <iostream>
+#include <fstream>      // 파일
+#include <string>       // string
+#include <unistd.h>     // sleep 함수
+#include <sstream>      // stringstream
+#include <vector>       // vector 함수
+using namespace std;
+#include "AsianUser.h"
+
 
 int main(void)
 {
@@ -81,6 +90,7 @@ int main(void)
             }
             else
             {
+                system("clear");
                 cout<<"┌───────────────────────────────────────────────────────────────────────┐"<<endl;
                 cout<<"│                     비밀번호가 일치하지 않습니다.                     │" << endl;
                 cout<<"└───────────────────────────────────────────────────────────────────────┘"<<endl;                

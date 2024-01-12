@@ -1,3 +1,12 @@
+#include <iostream>
+#include <fstream>      // 파일
+#include <string>       // string
+#include <unistd.h>     // sleep 함수
+#include <sstream>      // stringstream
+#include <vector>       // vector 함수
+using namespace std;
+#include "AsianUser.h"
+
 // 잘못된 입력
 void BockTicketUser::InvalidInput()
 {
@@ -7,7 +16,6 @@ void BockTicketUser::InvalidInput()
     cout<<"재입력하시려면 엔터를 누르세요."<<endl;
     cin.get();
 }
-
 // 시작 페이지 아스키 아트
 void BockTicketUser::StartLogoFile()
 {
@@ -24,7 +32,6 @@ void BockTicketUser::StartLogoFile()
     }
     mainLogo.close();
 }
-
 // 메인 페이지 아스키 아트
 void BockTicketUser::MainLogoFile()
 {
@@ -41,7 +48,6 @@ void BockTicketUser::MainLogoFile()
     }
     mainLogo.close();
 }
-
 // 스플래시
 void BockTicketUser::Start()
 {
@@ -61,7 +67,6 @@ void BockTicketUser::Start()
     // 로그인 및 회원가입 고르는 페이지로 넘어감
     PrintStart();
 }
-
 // 시작 페이지
 void BockTicketUser::PrintStart()
 {
@@ -84,7 +89,6 @@ void BockTicketUser::PrintStart()
         PrintStart();
     }
 }
-
 // 로그인 및 ID/PW 선택
 void BockTicketUser::LoginChoice()
 {
@@ -106,7 +110,6 @@ void BockTicketUser::LoginChoice()
         LoginChoice();
     }
 }
-
 // 로그인
 void BockTicketUser::Login()
 {
@@ -147,7 +150,6 @@ void BockTicketUser::Login()
         cout<<"로그인 실패하셨습니다. ID와 PW를 다시 한번 확인해주세요."<<endl<<endl;
     }
 }
-
 // 회원가입
 void BockTicketUser::Join()
 {
@@ -301,7 +303,6 @@ void BockTicketUser::Join()
     }   
     PrintStart();
 }
-
 // 아이디 찾기
 void BockTicketUser::FindId(){
     system("clear");
@@ -380,7 +381,6 @@ void BockTicketUser::FindId(){
             FindPw();
     }
 }
-
 // 비밀번호 찾기
 void BockTicketUser::FindPw(){
     StartLogoFile();
@@ -453,7 +453,6 @@ void BockTicketUser::FindPw(){
     }
 
 }
-
 // 메인화면
 int BockTicketUser::PrintMain(){
     MainLogoFile();
@@ -477,7 +476,6 @@ int BockTicketUser::PrintMain(){
     
     return userChoice;
 }
-
 // 경기 정보 선택
 void BockTicketUser::ChoiceInformation()
 {
@@ -510,7 +508,6 @@ void BockTicketUser::ChoiceInformation()
     else
         PrintInformation(userChoice);
 }
-
 // 경기 정보 출력
 void BockTicketUser::PrintInformation(int n)
 {
